@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Página de Documentación Técnica para el desarrollo del proyecto de FreeCodeCamp">
+  <title>JavaScript Documentación Tecnica</title>
+
+</head>
+
+<body>
+  <nav id="navbar">
+    <header>JavaScript</header>
+    <ul>
+      <li><a class="nav-link" href="#Introduccion">Introducción</a></li>
+      <li>
+        <a class="nav-link" href="#Que_necesitas_saber">¿Qué lo que necesitas saber?</a>
+      </li>
+      <li><a class="nav-link" href="#Hola_Mundo">Hola Mundo!</a></li>
+      <li><a class="nav-link" href="#variables">Variables</a></li>
+      <li>
+        <a class="nav-link" href="#Declarar_variables">Declarar Variables</a>
+      </li>
+      <li><a class="nav-link" href="#Hoisting">Elevacion de variables (Hoisting)</a></li>
+      <li><a class="nav-link" href="#If_else">If... else</a></li>
+      <li><a class="nav-link" href="#Switch">Switch</a></li>
+      <li>
+        <a class="nav-link" href="#Funciones">Funciones</a>
+      </li>
+      <li><a class="nav-link" href="#Llamar_Funciones">Llamar funciones</a></li>
+      <li>
+        <a class="nav-link" href="#Funciones_Flechas">Funciones Flechas</a>
+      </li>
+      <li><a class="nav-link" href="#Arrays">Arreglos</a></li>
+    </ul>
+  </nav>
+  <main id="main-doc">
+
+    <section class="main-section" id="Introduccion">
+      <header>Introducción</header>
+      <article>
+        <p>JavaScript es un lenguaje de programación multiplataforma orientado a objetos que se utiliza para hacer que
+          las páginas web sean interactivas (p. ej., Que tienen animaciones complejas, botones en los que se puede hacer
+          clic, menús emergentes, etc.). También hay versiones de JavaScript de lado del servidor más avanzadas, como
+          Node.js, que te permiten agregar más funcionalidad a un sitio web que simplemente descargar archivos (como la
+          colaboración en tiempo real entre varias computadoras).</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="Que_necesitas_saber">
+      <header>¿Qué es lo que necesitas saber?</header>
+      <article>
+        <p>Esta guía presume que tienes los siguientes antecedentes básicos :</p>
+        <ul>
+          <li>Comprensión general de Internet y la (World Wide Web (en-US)).</li>
+          <li>Buen conocimiento práctico del lenguaje de marcado de hipertexto (HTML).</li>
+          <li>Alguna experiencia en programación. Si eres nuevo en la programación, prueba uno de los tutoriales
+            vinculados en la página principal sobre JavaScript.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="main-section" id="Hola_Mundo">
+      <header>Hola Mundo!</header>
+      <article>
+        <p>
+          Para comenzar a escribir JavaScript, abra su editor de texto y escriba su primer código JavaScript "Hola
+          mundo":
+        </p>
+        <code>function saludo(tuNombre) { alert("Hola " + tuNombre); }
+      saludo("Mundo!");
+    </code>
+      </article>
+    </section>
+
+    <section class="main-section" id="variables">
+      <header>Variables</header>
+      <article>
+        <p>Una variable es un espacio en memoria donde se almacena un dato, un espacio donde podemos guardar cualquier
+          tipo de información que necesitemos para realizar las acciones de nuestros programas. Podemos pensar en ella
+          como una caja, donde almacenamos un dato. Esa caja tiene un nombre, para que más adelante podamos referirnos a
+          la variable, recuperar el dato así como asignar un valor a la variable siempre que deseemos.
+        </p>
+      </article>
+    </section>
+
+    <section class="main-section" id="Declarar_variables">
+      <header>Declarar Variables</header>
+      <article>
+        <p>JavaScript tiene tres tipos de declaraciones de variables.
+
+        <ul>
+          <li>
+            <strong>Var:</strong>
+            Declara una variable, opcionalmente la inicia a un valor.
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <strong>Let:</strong>
+            Declara una variable local con ámbito de bloque, opcionalmente la inicia a un valor.
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <strong>const:</strong>
+            Declara un nombre de constante de solo lectura y ámbito de bloque.
+          </li>
+        </ul>
+
+
+        </p>
+
+
+        <p>Puedes declarar una variable de dos formas:</p>
+        <ul>
+          <li>
+            Con la palabra clave var. Por ejemplo, <code>var x = 42.</code> Esta sintaxis se puede utilizar para
+            declarar variables locales y globales, dependiendo del contexto de ejecución.
+          </li>
+        </ul>
+
+
+        <ul>
+          <li>
+            Con la palabra clave const o let. Por ejemplo, <code>let y = 13.</code>Esta sintaxis se puede utilizar para
+            declarar una variable local con ámbito de bloque. (Ve el Ámbito de variables abajo.)
+          </li>
+        </ul>
+
+      </article>
+    </section>
+
+    <section class="main-section" id="Hoisting">
+      <header>Elevación de variables (Hoisting)</header>
+      <article>
+        <p>Otra cosa inusual acerca de las variables en JavaScript es que puedes hacer referencia a una variable
+          declarada más tarde, sin obtener una excepción.
+        </p>
+        <p>Este concepto se conoce como elevación. Las variables en JavaScript son, en cierto sentido, "elevadas" (o
+          "izadas") a la parte superior de la función o declaración. Sin embargo, las variables que se elevan devuelven
+          un valor de undefined. Entonces, incluso si la declaras e inicias después de usarla o hacer referencia a esta
+          variable, todavía devuelve undefined.</p>
+        <code>/**
+        * Ejemplo 1
+        */
+       console.log(x === undefined); // true
+       var x = 3;
+       
+       /**
+        * Ejemplo 2
+        */
+       // devolverá un valor de undefined
+       var myvar = 'my value';
+       
+       (function() {
+         console.log(myVar); // undefined
+         var myvar = 'valor local';
+       })();
+       </code>
+        <p>Los ejemplos anteriores se interpretarán de la misma manera que:
+
+        </p>
+        <code>/**
+  * Ejemplo 1
+  */
+ var x;
+ console.log(x === undefined); // true
+ x = 3;
+ 
+ /**
+  * Ejemplo 2
+  */
+ var myvar = 'my value';
+ 
+ (function() {
+   var myVar;
+   console.log(myVar); // undefined
+   myvar = 'valor local';
+ })();
+ </code>
+        <p>Debido a la elevación, todas las declaraciones var en una función se deben colocar lo más cerca posible de la
+          parte superior de la función. Esta buena práctica aumenta la claridad del código.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="If_else">
+      <header>If...Else</header>
+      <article>
+        <p>Utiliza la expresión if para ejecutar una instrucción si una condición lógica es true. Utiliza la cláusula
+          opcional else para ejecutar una instrucción si la condición es false.
+        </p>
+        <p>Una declaración if se ve así:
+
+        </p>
+        <code>if (condition) {
+        statement_1;
+      } else {
+        statement_2;
+      }
+      </code>
+        <p>Aquí, la condition puede ser cualquier expresión que se evalúe como true o false. (Consulta Boolean para
+          obtener una explicación de lo que se evalúa como true y false).</p>
+        <p>Si condition se evalúa como true, se ejecuta statement_1. De lo contrario, se ejecuta statement_2.
+          statement_1 y statement_2 pueden ser cualquier declaración, incluidas otras declaraciones if anidadas.</p>
+        <p>También puedes componer las declaraciones usando else if para que se prueben varias condiciones en secuencia,
+          de la siguiente manera:</p>
+        <code>if (condition_1) {
+        statement_1;
+      } else if (condition_2) {
+        statement_2;
+      } else if (condition_n) {
+        statement_n;
+      } else {
+        statement_last;
+      }</code>
+        <p>En el caso de múltiples condiciones, solo se ejecutará la primera condición lógica que se evalúe como true.
+          Para ejecutar múltiples declaraciones, agrúpalas dentro de una declaración de bloque ({ … }).</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="Switch">
+      <header>Switch</header>
+      <article>
+        <p>Una instrucción switch permite que un programa evalúe una expresión e intente hacer coincidir el valor de la
+          expresión con una etiqueta case. Si la encuentra, el programa ejecuta la declaración asociada.
+
+        </p>
+        <p> Una instrucción switch se ve así:
+        </p>
+
+        <code>switch (expression) {
+        case label_1:
+          statements_1
+          [break;]
+        case label_2:
+          statements_2
+          [break;]
+          …
+        default:
+          statements_def
+          [break;]
+      }</code>
+        <p>JavaScript evalúa la instrucción switch anterior de la siguiente manera:
+
+        </p>
+        <ul>
+          <li>
+            El programa primero busca una cláusula case con una etiqueta que coincida con el valor de expresión y luego
+            transfiere el control a esa cláusula, ejecutando las declaraciones asociadas.
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <p>Si no se encuentra una etiqueta coincidente, el programa busca la cláusula opcional default
+              :</p>
+            <ul>
+              <li>Si se encuentra una cláusula default, el programa transfiere el control a esa cláusula, ejecutando las
+                declaraciones asociadas.</li>
+              <li>
+                Si no se encuentra una cláusula default, el programa reanuda la ejecución en la declaración que sigue al
+                final de switch.
+              </li>
+              <li>(Por convención, la cláusula default está escrita como la última cláusula, pero no es necesario que
+                sea así).</li>
+            </ul>
+          </li>
+      </article>
+    </section>
+
+    <section class="main-section" id="Funciones">
+      <header>Funciones</header>
+      <article>
+        <p>
+          Las funciones son uno de los bloques de construcción fundamentales en JavaScript. Una función en JavaScript es
+          similar a un procedimiento — un conjunto de instrucciones que realiza una tarea o calcula un valor, pero para
+          que un procedimiento califique como función, debe tomar alguna entrada y devolver una salida donde hay alguna
+          relación obvia entre la entrada y la salida. Para usar una función, debes definirla en algún lugar del ámbito
+          desde el que deseas llamarla.
+        </p>
+      </article>
+    </section>
+
+    <section class="main-section" id="Llamar_Funciones">
+      <header>Llamar Funciones</header>
+      <article>
+        <p>
+          Definir una función no la ejecuta. Definirla simplemente nombra la función y especifica qué hacer cuando se
+          llama a la función.
+        </p>
+        <p>
+          Llamar a la función en realidad lleva a cabo las acciones especificadas con los parámetros indicados. Por
+          ejemplo, si defines la función square, podrías llamarla de la siguiente manera:
+        </p>
+        <code>square(5);
+      </code>
+        <p>La declaración anterior llama a la función con un argumento de 5. La función ejecuta sus declaraciones y
+          devuelve el valor 25.</p>
+        <p>Las funciones deben estar dentro del ámbito cuando se llaman, pero la declaración de la función se puede
+          elevar (cuando aparece debajo de la llamada en el código), como en este ejemplo:</p>
+        <code>console.log(square(5));
+        /* ... */
+        function square(n) { return n * n }
+        </code>
+        <p>El ámbito de una función es la función en la que se declara (o el programa completo, si se declara en el
+          nivel superior).</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="Funciones_Flechas">
+      <header>Funciones Flechas </header>
+      <article>
+        <p>
+          Una expresión de función flecha (anteriormente, y ahora conocida incorrectamente como función de flecha
+          gruesa) tiene una sintaxis más corta en comparación con las expresiones de función y no tiene su propio this,
+          arguments, super o new.target. Las funciones flecha siempre son anónimas.
+        </p>
+        <p>Dos factores influyeron en la introducción de las funciones flecha: funciones más cortas y no vinculantes de
+          this.</p>
+        <p>En algunos patrones funcionales, las funciones más cortas son bienvenidas. Compara:
+
+        </p>
+        <code>var a = [
+        'Hidrógeno',
+        'Helio',
+        'Litio',
+        'Berilio'
+      ];
+      
+      var a2 = a.map(function(s) { return s.length; });
+      
+      console.log(a2); // logs [8, 6, 7, 9]
+      
+      var a3 = a.map(s => s.length);
+      
+      console.log(a3); // logs [8, 6, 7, 9]
+      </code>
+
+        <p>Sin this separado</p>
+        <p>Hasta las funciones flecha, cada nueva función definía su propio valor this (un nuevo objeto en el caso de un
+          constructor, indefinido en llamadas a funciones en modo estricto, el objeto base si la función se llama como
+          un "método de objeto", etc.). Esto resultó ser poco menos que ideal con un estilo de programación orientado a
+          objetos.</p>
+        <code>function Person() {
+        // El constructor Person() define `this` como él mismo.
+        this.age = 0;
+      
+        setInterval(function growUp() {
+          // En modo no estricto, la función growUp() define `this`
+          // como el objeto global, que es diferente del `this`
+          // definido por el constructor Person().
+          this.age++;
+        }, 1000);
+      }
+      
+      var p = new Person();</code>
+        <p>Una función flecha no tiene su propio this se utiliza el valor de this del contexto de ejecución adjunto. Por
+          lo tanto, en el siguiente código, this dentro de la función que se pasa a setInterval tiene el mismo valor que
+          this en la función adjunta:</p>
+        <code>function Person() {
+        this.age = 0;
+      
+        setInterval(() => {
+          this.age++; // |this| propiamente se refiere al objeto person
+        }, 1000);
+      }
+      
+      var p = new Person();</code>
+      </article>
+    </section>
+
+    <section class="main-section" id="Arrays">
+      <header>Arreglos</header>
+      <article>
+        <p>
+          Un array es una lista ordenada de valores a los que te refieres con un nombre y un índice.
+        </p>
+        <p>Por ejemplo, considera un arreglo llamado emp, que contiene los nombres de los empleados indexados por su id
+          de empleado numérico. De tal modo que emp[0] sería el empleado número cero, emp[1] el empleado número uno, y
+          así sucesivamente.</p>
+        <p>JavaScript no tiene un tipo de dato array explícito. Sin embargo, puedes utilizar el objeto Array predefinido
+          y sus métodos para trabajar con arreglos en tus aplicaciones. El objeto Array tiene métodos para manipular
+          arreglos de varias formas, tal como unirlos, invertirlos y ordenarlos. Tiene una propiedad para determinar la
+          longitud del arreglo y otras propiedades para usar con expresiones regulares.</p>
+
+        <p>Toda la documentación esta tomada de la página de
+          <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide" target="_blank">MDN</a>
+        </p>
+      </article>
+    </section>
+  </main>
+</body>
+
+</html>
